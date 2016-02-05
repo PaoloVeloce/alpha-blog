@@ -14,12 +14,15 @@
             </small>
           </div>
         </div>
+        
+        <% if logged_in? && current_user == artic.user %>
    <div class="article-actions">
     <%= link_to "Edit this article", edit_article_path(artic), class: "btn btn-xs btn-primary" %>
     <%= link_to "Delete this article", article_path(artic), method: :delete, 
        data: { confirm: "Are you sure you want to delete this article?"}, 
        class: "btn btn-xs btn-danger" %>
-  </div>
+   </div>
+   <% end %>
      </div>
     </div>
   </div>
